@@ -301,7 +301,7 @@ header
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  float: center;
+  float: left;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1901,77 +1901,5 @@ responsive
   }
   section.contact-us #formholder {
     height:38em
-  }
-}
-
-
-/*
----------------------------------------------
-cross-page nav link
----------------------------------------------
-*/
-
-/* Positioned against the nav so the centred logo stays centred. */
-.header-area .main-nav {
-  position: relative;
-}
-
-.header-area .main-nav .nav-page-link {
-  position: absolute;
-  right: 0;
-  top: 0;
-  line-height: 100px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease 0s;
-}
-
-.header-area .main-nav .nav-page-link:hover {
-  color: #f5a425;
-  text-decoration: none;
-}
-
-/* Sticky header turns white, so the link has to darken with the logo. */
-.background-header .main-nav .nav-page-link {
-  line-height: 75px;
-  color: #1e1e1e!important;
-}
-
-.background-header .main-nav .nav-page-link:hover {
-  color: #f5a425!important;
-}
-
-/* Too narrow to sit beside the logo, so stack it underneath instead. */
-@media (max-width: 767px) {
-  .header-area .main-nav .logo,
-  .background-header .main-nav .logo {
-    display: block;
-    line-height: 56px;
-    font-size: 24px;
-  }
-
-  /* Mobile header is near-white (#f7f7f7), so match the logo's dark ink. */
-  .header-area .main-nav .nav-page-link,
-  .background-header .main-nav .nav-page-link {
-    position: static;
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1;
-    padding-bottom: 14px;
-    color: #1e1e1e!important;
-  }
-
-  .header-area .main-nav .nav-page-link:hover,
-  .background-header .main-nav .nav-page-link:hover {
-    color: #f5a425!important;
-  }
-
-  /* Stacked header is taller than the fixed 80px the sticky state assumes. */
-  .header-area.background-header {
-    height: auto!important;
   }
 }

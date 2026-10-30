@@ -207,7 +207,16 @@
 	    var scrollPos = $(document).scrollTop();
 	    $('.nav a').each(function () {
 	        var currLink = $(this);
-	        var refElement = $(currLink.attr("href"));
+	        var href = currLink.attr("href");
+	        // Links to other pages are not in-page sections: $("page.html") parses
+	        // as a selector, matches nothing, and .position() then returns undefined.
+	        if (!href || href.charAt(0) !== '#') {
+	            return;
+	        }
+	        var refElement = $(href);
+	        if (!refElement.length) {
+	            return;
+	        }
 	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
 	            $('.nav ul li a').removeClass("active");
 	            currLink.addClass("active");
@@ -278,6 +287,11 @@
 
 
 	function visible(partial) {
+        // Nothing to measure when the element is absent from this page.
+        if (!partial || !partial.length) {
+            return false;
+        }
+
         var $t = partial,
             $w = jQuery(window),
             viewTop = $w.scrollTop(),
