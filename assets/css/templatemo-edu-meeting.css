@@ -1834,8 +1834,11 @@ responsive
     margin-top: 0;
   }
 
+  /* The caption is centred in the banner here and wraps to ~460px on a
+     phone, so pulling the carousel up lands it on the banner text. The
+     shorter the viewport, the worse it gets, so claw back nothing. */
   .services {
-    margin-top: -230px;
+    margin-top: 0;
     position: relative;
     width: 100%;
   }
