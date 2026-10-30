@@ -1901,3 +1901,40 @@ responsive
     height:38em
   }
 }
+
+
+/*
+---------------------------------------------
+cross-page nav link
+---------------------------------------------
+*/
+
+.header-area .main-nav .nav-page-link {
+  display: inline-block;
+  line-height: 100px;
+  margin-left: 30px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease 0s;
+}
+
+.header-area .main-nav .nav-page-link:hover {
+  color: #f5a425;
+  text-decoration: none;
+}
+
+.background-header .main-nav .nav-page-link {
+  line-height: 75px;
+}
+
+@media (max-width: 767px) {
+  .header-area .main-nav .nav-page-link {
+    display: block;
+    line-height: 30px;
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+}

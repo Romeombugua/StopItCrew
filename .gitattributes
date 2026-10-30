@@ -1,0 +1,10 @@
+# Keep binary assets byte-exact (no CRLF/LF conversion)
+*.pdf binary
+*.jpg binary
+*.png binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
