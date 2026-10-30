@@ -967,7 +967,7 @@ services
 
 .services {
   margin-top: -250px;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 
@@ -1283,8 +1283,7 @@ section.contact-us {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  /* padding: 140px 0px 0px 0px; */
-  
+  padding: 120px 0px 0px 0px;
 }
 
 section.contact-us #contact {
@@ -1293,7 +1292,7 @@ section.contact-us #contact {
   padding: 40px;
   width: 70%;
   margin-left: 15%;
-  margin-top: 30em;
+  margin-top: 0;
 }
 
 section.contact-us #contact h2 {
@@ -1784,7 +1783,7 @@ responsive
 
   section.contact-us #contact {
     margin-bottom: 30px;
-    margin-top: 37em;
+    margin-top: 0;
   }
   section.contact-us #formholder {
     height:38em
@@ -1832,12 +1831,12 @@ responsive
     margin-bottom: 0px;
     width:95%;
     margin-left: 2.5%;
-    margin-top: 37em;
+    margin-top: 0;
   }
 
   .services {
     margin-top: -230px;
-    position: absolute;
+    position: relative;
     width: 100%;
   }
   section.contact-us #formholder {
@@ -1909,10 +1908,16 @@ cross-page nav link
 ---------------------------------------------
 */
 
+/* Positioned against the nav so the centred logo stays centred. */
+.header-area .main-nav {
+  position: relative;
+}
+
 .header-area .main-nav .nav-page-link {
-  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
   line-height: 100px;
-  margin-left: 30px;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -1926,15 +1931,44 @@ cross-page nav link
   text-decoration: none;
 }
 
+/* Sticky header turns white, so the link has to darken with the logo. */
 .background-header .main-nav .nav-page-link {
   line-height: 75px;
+  color: #1e1e1e!important;
 }
 
+.background-header .main-nav .nav-page-link:hover {
+  color: #f5a425!important;
+}
+
+/* Too narrow to sit beside the logo, so stack it underneath instead. */
 @media (max-width: 767px) {
-  .header-area .main-nav .nav-page-link {
+  .header-area .main-nav .logo,
+  .background-header .main-nav .logo {
     display: block;
-    line-height: 30px;
-    margin-left: 0;
-    margin-bottom: 15px;
+    line-height: 56px;
+    font-size: 24px;
+  }
+
+  /* Mobile header is near-white (#f7f7f7), so match the logo's dark ink. */
+  .header-area .main-nav .nav-page-link,
+  .background-header .main-nav .nav-page-link {
+    position: static;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    padding-bottom: 14px;
+    color: #1e1e1e!important;
+  }
+
+  .header-area .main-nav .nav-page-link:hover,
+  .background-header .main-nav .nav-page-link:hover {
+    color: #f5a425!important;
+  }
+
+  /* Stacked header is taller than the fixed 80px the sticky state assumes. */
+  .header-area.background-header {
+    height: auto!important;
   }
 }
