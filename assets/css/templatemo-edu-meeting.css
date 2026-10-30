@@ -778,9 +778,14 @@ banner
 services
 ---------------------------------------------
 */
+/* Owl sets width:100% on slide images. A fixed 40vh height on top of that
+   stretched them out of shape, worse the taller the window, so hold the
+   source images' square ratio and crop instead of distorting. */
 .case-image{
   border-radius: 10px;
-  height:40vh;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 #case1{
@@ -971,8 +976,12 @@ services
   width: 100%;
 }
 
+/* The card text is white and the background image above is commented out,
+   so the cards need an opaque dark panel: most of this section sits on the
+   white body, where white on white is unreadable. */
 .services .item {
   /* background-image: url(../images/service-item-bg.jpg); */
+  background-color: #1f272b;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
