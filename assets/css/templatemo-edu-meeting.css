@@ -124,8 +124,13 @@ global styles
 --------------------------------------------- 
 */
 html,
+/* The services section is transparent by design, so the cards can float
+   over the banner video. That left the body showing through below the
+   banner as a white band, so the page backdrop carries the same dark
+   treatment as the other sections rather than .services taking an opaque
+   background of its own, which would hide the video it overlaps. */
 body {
-  background: #fff;
+  background: #1f272b url(../images/meetings-bg.jpg) center center / cover no-repeat fixed;
   font-family: 'Poppins', sans-serif;
 }
 
