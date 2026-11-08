@@ -21,15 +21,11 @@
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css?v=4">
 
     <style>
-      /* Height of the template's header, which sits absolutely over the top of the page. */
+      /* Height of the template's header, which sits absolutely over the top of the page.
+         It is 100px at every width: the 100px logo line-height sets it on desktop
+         (.main-nav's 80px is only a minimum), and the phone rule fixes it at 100px. */
       :root {
-        --header-h: 80px;
-      }
-
-      @media (max-width: 767px) {
-        :root {
-          --header-h: 100px;
-        }
+        --header-h: 100px;
       }
 
       html, body {
