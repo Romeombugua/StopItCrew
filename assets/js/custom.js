@@ -24,7 +24,10 @@
           })
         });
 
-        var $grid = $(".grid").isotope({
+        // Plugins are only loaded on the pages that use them (index.html). Without
+        // these guards the call throws on the other pages and nothing below it runs,
+        // including the mobile menu toggle.
+        var $grid = !$.fn.isotope ? $() : $(".grid").isotope({
           itemSelector: ".all",
           percentPosition: true,
           masonry: {
@@ -109,6 +112,7 @@
 	})();
 
 
+	if ($.fn.owlCarousel) {
 	$('.owl-service-item').owlCarousel({
 		items:3,
 		loop:true,
@@ -148,6 +152,7 @@
 			  }
 		  }
 	  })
+	}
 	
 
 	// Menu Dropdown Toggle
